@@ -1,0 +1,37 @@
+#include <msp430.h> 
+
+
+/**
+ * main.c
+ */
+int sum(int a, int b);
+
+int main(void)
+{
+	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
+	
+	// define and initilize variables a and b
+
+	int a = 0b0110100101100001;
+	int b = 0b0101010101010101;
+	int c;
+
+	// Call sum function with variable a and b as its input parameters
+
+	c = sum(a,b);
+
+	while(1);
+
+    return 0;
+}
+
+
+// This sum function takes the two input parameters and adds them together. Then, it outputs the Sum to where the function was called
+int sum(int a, int b)
+{
+    int Sum;
+    Sum = a + b;
+
+    return Sum;
+}
+
